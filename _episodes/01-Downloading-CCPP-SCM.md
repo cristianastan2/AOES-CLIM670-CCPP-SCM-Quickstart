@@ -22,6 +22,7 @@ Download the CCPP-SCM from Github
 git clone --recursive -b v6.0.0 https://github.com/NCAR/ccpp-scm ccpp-scm-6.0 
 ~~~
 {: .language-bash}
+This will take a while ...
 
 Change to the `ccpp-scm-6.0` directory
 ~~~
