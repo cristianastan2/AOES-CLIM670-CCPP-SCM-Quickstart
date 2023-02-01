@@ -1,9 +1,9 @@
 ---
-title: "CESM Quickstart"
+title: "CCPP-SCM Quickstart"
 teaching: 0
 exercises: 0 
 questions:
-- "How do I setup and run the CESM?"
+- "How do I setup the SCM?"
 objectives:
 keypoints:
 ---
