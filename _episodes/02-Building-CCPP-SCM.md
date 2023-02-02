@@ -63,7 +63,7 @@ Now you have two new files that will configure the building environmeent for Hop
 
 ~~~
 $ cd ../../
-$ ./scm/etc/Hopper_setup_gnu.sh
+$ source scm/etc/Hopper_setup_gnu.sh
 ~~~
 {: .language-bash}
 
@@ -73,7 +73,10 @@ The first step in compiling the CCPP and SCM is to properly setup your user envi
 
 ~~~
 $ cd /home/username/classes/clim670/ccpp-scm-6.0/scm/data/
-$ 
+$ ln -fs /home/cstan/classes/clim670/ccpp-scm/scm/data/comparison_data/
+$ ln -fs /home/cstan/classes/clim670/ccpp-scm/scm/data/physics_input_data/
+$ ln -fs /home/cstan/classes/clim670/ccpp-scm/scm/data/processed_case_input/
+$ ln -fs /home/cstan/classes/clim670/ccpp-scm/scm/data/raw_case_input/
 ~~~
 {: .language-bash}
 
