@@ -11,7 +11,7 @@ keypoints:
 We will use GMU Hopper to run this model.
 We will now download the model and all the setup files needed for it. These are one-time steps.
 
-Go to your `/home/useridd/classes/clim670/` directory 
+Go to your `/home/username/classes/clim670/` directory 
 ~~~
 $ cd /home/cstan/classes/clim670
 ~~~
