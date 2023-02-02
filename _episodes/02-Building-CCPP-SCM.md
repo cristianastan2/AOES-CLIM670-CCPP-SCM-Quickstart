@@ -59,7 +59,7 @@ $ ls
 ~~~
 {: .language-bash}
 
-Now you have two new files that will configure the building environmeent for Hopper. One can be used for the t/csh shell and the other for the bash shell. To source the file:
+Now you have two new files that will configure the building environmeent for Hopper. One can be used for the t/csh shell and the other for the bash shell. From the top-level code directory (ccpp-scm-6.0), source the bash script for Hopper:
 
 ~~~
 $ cd ../../
@@ -82,21 +82,22 @@ $ ln -fs /home/cstan/classes/clim670/ccpp-scm/scm/data/raw_case_input/
 
 Above were the one-time setup setps, now we move on to the steps you will do everytime to setup a new model experiment and run it.
 
-Go into the scripts subdirectory in your `CIMEROOT`
+1. From the top level code-directory (ccpp-scm-6.0), change directory to the top-level SCM directory: 
 ~~~
-$ cd /glade/work/kpegion/cesm2.1.1/cime/scripts
-~~~
-{: .language-bash}
-
-Create a new case
-~~~
-$ ./create_newcase --case ~/cases/b.day1.0 --res f19_g17 --compset B1850 --project UGMU0032
+$ cd scm
 ~~~
 {: .language-bash}
 
-This created a new subdirectory for your new case. Change to that directory.
+2. Make a build directory and change into it
 ~~~
-$ cd ~/cases/b.day1.0 
+$ mkdir bin
+$ cd bin
+~~~
+{: .language-bash}
+
+3. Invoke `cmake` on the source code  
+~~~
+$ cmake ../src 
 ~~~
 {: .language-bash}
 
