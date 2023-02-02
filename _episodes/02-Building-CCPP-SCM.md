@@ -63,7 +63,7 @@ Now you have two new files that will configure the building environmeent for Hop
 
 ~~~
 $ cd ../../
-$ . scm/etc/Hopper_setup_gnu.sh
+$ ./scm/etc/Hopper_setup_gnu.sh
 ~~~
 {: .language-bash}
 
