@@ -7,55 +7,75 @@ questions:
 objectives:
 keypoints:
 ---
-You have now downloaded all the model components and the CIME workflow. Let's take a look:
-From your `/glade/work/username/cesm2.1.1` directory, see what is there.
+You have now downloaded all the model components. Let's take a look:
+From your `/home/username/classes/clim670/ccpp-scm-6.0` directory, see what is there.
 ~~~
 $ ls
 ~~~
 {: .language-bash}
 
-> ## What was added after running `manage_externals`
->
-{: .challenge}
+#### Organization of the CCPP-SCM Directory
 
-#### Organization of the CESM Directory
+* scm - Top level SCM directory: contains the dynamical core
+* ccpp - Top level CCPP directory: contains physics packages
+* CMakeModules - Contains modules required to run the code
+* contrib - Contains scripts that download data files required to run the model
+* docker - Top directory for building CCPP-SCM container (not used in this class)
+* test - Top directory of a test case
+* tutorial_files - Examples used by developers in tutorials 
 
-CESM has a set of keywords that refer to specific directories, they are:
-* `SRCROOT` - Path to your CESM code; contains `CIMEROOT`
-* `CIMEROOT` - Path of your CIME directory which is sub-directory under `SRCROOT`
-* `CASEROOT` - Path to your case directories 
-* `OBJROOT` - Path to your build directory
-* `EXEROOT` - Path to your run directory
-* `DOUT_S_ROOT` - Path to your archived data directory
+### Using existing libraries
+The Python environment must provide the f90nml module for the SCM scripts to function. Users can test if f90nml is installed using this command in the shell:
+~~~
+$ python -c "import f90nml"
+~~~
+{: .language-bash}
 
-> ## Find your SRCROOT and CIMEROOT
->
-> Your SRCROOT and CIMEROOT exist after downloading the CESM.  What are the exact paths for you?
->
-{: .challenge}
-
-#### CIMEROOT
-
-The cime subdirectory contains a subdirectory called `scripts`.  This is the directory we will use initially for setting up the model.
-Change into this subdirectory and take a look.
+If f90nml is installed, this command will succeed silently, otherwise an ImportError: No module named f90nml will be printed to screen. To install the f90nml (v0.19) Python module, use:
 
 ~~~
-$ cd cime/scripts
+$ module load anaconda3
+$ pip install --user f90nml ==0.19
+~~~
+{: .language-bash}
+
+Platform-specific scripts are provided to load modules and set the user environment for preconfigured platforms. These scripts load compiler modules (Fortran 2008-compliant), the NetCDF module, Python environment, etc. and set compiler and environment variables. 
+~~~
+$ cd /home/username/classes/clim670/ccpp-scm-6.0/scm/etc/
+$ ls 
+~~~
+{: .language-bash}
+
+Hopper is not one of the preconfigured platforms. To get the corresponding file for Hopper: 
+~~~
+$ cp /home/cstan/classes/clim670/ccpp-scm/scm/etc/Hopper_setup* . 
+~~~
+{: .language-bash}
+
+Let's take a look:
+From your `/home/username/classes/clim670/ccpp-scm-6.0/scm/etc/` directory, see what is there.
+~~~
 $ ls
 ~~~
 {: .language-bash}
 
+Now you have two new files that will configure the building environmeent for Hopper. One can be used for the t/csh shell and the other for the bash shell. To source the file:
 
-The final one-time step is to create a directory called `cases` in your home directory.
 ~~~
-$ mkdir ~/cases
+$ cd ../../
+$ . scm/etc/Hopper_setup_gnu.sh
 ~~~
 {: .language-bash}
 
-The cases directory (also called your `CASEROOT`) will contain all the source code and configuration files for your model experiments.  
-Why do you think we would put something like this in our home directory?
+Ignore the warnings. 
 
-### Model Quickstart
+The first step in compiling the CCPP and SCM is to properly setup your user environment as described in sections above. The second step is to download the lookup tables and other large datasets (large binaries, <1 GB) needed by the physics schemes and place them in the correct directory. I have downloaded these files and you will create symbolic links:
+
+~~~
+$ cd /home/username/classes/clim670/ccpp-scm-6.0/scm/data/
+$ 
+~~~
+{: .language-bash}
 
 Above were the one-time setup setps, now we move on to the steps you will do everytime to setup a new model experiment and run it.
 
