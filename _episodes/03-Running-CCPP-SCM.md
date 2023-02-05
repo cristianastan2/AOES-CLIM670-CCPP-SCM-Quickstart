@@ -1,5 +1,5 @@
 ---
-title: "CCPP-SCM running"
+title: "Running CCPP-SCM"
 teaching: 0
 exercises: 0 
 questions:
@@ -109,20 +109,36 @@ Create a script (e.g., `create_gfs_v16_bomex_case.sh` with the following
 ~~~
 #!/bin/bash
 
-module load gnu10/10.3.0-ya
-module load python/3.9.9-jh
-
 export case=bomex
 export suite=SCM_GFS_v16
 export namelist=input_GFS_v16.nml
 export RUN_TIME=86400
 export ITT_OUT=1
 export BIN_DIR=/home/cstan/scm_sandbox/ccpp-scm-6.0/scm/bin
-export RUN_DIR=/scratch/cstan/clim670/ccpp-scm
+export RUN_DIR=/scratch/cstan/clim670/ccpp-scm-6.0  # Make sure RUN_DIR exists
 
 python ${BIN_DIR}/run_scm.py -c ${case} -s ${suite} -n ${namelist} --runtime ${RUN_TIME} --n_itt_out ${ITT_OUT} --bin_dir ${BIN_DIR} --run_dir ${RUN_DIR}
 ~~~
 {: .language-bash}
 
 Make sure the script is executable
+
+Before execturing the script, we need to set the user environment for Hopper.
+
+From the top-level code directory (ccpp-scm-6.0), source the bash script for Hopper:
+
+~~~
+$ source scm/etc/Hopper_setup_gnu.sh
+~~~
+{: .language-bash}
+
+Now we are ready to strat running our gfs_v16_bomex_case. 
+
+~~~
+$ cdd scm/cases/gfs_v16_bomex/
+$ ./create_gfs_v16_bomex_case.sh
+~~~
+{: .language-bash}
+
+
 
