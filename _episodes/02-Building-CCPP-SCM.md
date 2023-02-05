@@ -106,7 +106,7 @@ $ cmake ../src
 
 This will take a while.
 
-### What happen when we ran `cmake`?
+### What happened when we ran `cmake`?
 
 * Files necssary for building the executable have been written to bin/
 * The CCPP physics and framwork prebuild scripts are ran to match required physics variables with those available from the ddynaamical core (SCM)and to generate physcis caps and makefile segments
@@ -120,7 +120,7 @@ $ make
 ~~~
 {: .language-bash}
 
-### What happen when we ran `make`?
+### What happened when we ran `make`?
 
 * The executable `scm` is created and written in bin/ directory.
 * The run script `run-scm.py` is being copied to bin/ directory.
