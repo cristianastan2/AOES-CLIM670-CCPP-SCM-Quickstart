@@ -108,3 +108,17 @@ This will take a while.
 
 ### What happen when we ran `cmake`
 
+* Files necssary for building the executable have been written to bin/
+* The CCPP physics and framweork files have been compied to bin/ccpp 
+* ccpp_prebuild.err contains a list of all files that have been used in this step
+
+We are now ready to compile. This step will create the executable.
+
+~~~
+$ make 
+~~~
+{: .language-bash}
+
+
+
+
