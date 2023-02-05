@@ -104,4 +104,7 @@ $ cmake ../src
 ~~~
 {: .language-bash}
 
-This will take awhile.
+This will take a while.
+
+### What happen when we ran `cmake`
+
