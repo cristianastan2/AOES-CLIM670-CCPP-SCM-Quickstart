@@ -1,5 +1,5 @@
 ---
-title: "CCPP-SCM Quickstart"
+title: "CCPP-SCM running"
 teaching: 0
 exercises: 0 
 questions:
