@@ -109,7 +109,8 @@ This will take a while.
 ### What happen when we ran `cmake`?
 
 * Files necssary for building the executable have been written to bin/
-* The CCPP physics and framweork files have been compied to bin/ccpp 
+* The CCPP physics and framwork prebuild scripts are ran to match required physics variables with those available from the ddynaamical core (SCM)and to generate physcis caps and makefile segments
+* Software caps are generated for each physics group defined in the supplied Suitee definitiona Files (SDFs) and generate a static library that becomes part of the SCM executable. 
 * ccpp_prebuild.err contains a list of all files that have been used in this step
 
 We are now ready to compile. This step will create the executable.
@@ -118,6 +119,11 @@ We are now ready to compile. This step will create the executable.
 $ make 
 ~~~
 {: .language-bash}
+
+### What happen when we ran `make`?
+
+* The executable `scm` is created and written in bin/ directory.
+* The run script `run-scm.py` is being copied to bin/ directory.
 
 ### Now what?
 
