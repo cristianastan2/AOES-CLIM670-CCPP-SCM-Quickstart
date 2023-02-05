@@ -1,5 +1,5 @@
 ---
-title: "CCPP-SCM Quickstart"
+title: "Building CCPP-SCM"
 teaching: 0
 exercises: 0 
 questions:
