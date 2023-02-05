@@ -95,13 +95,34 @@ As part of the sixth CCPP release, the following suite names are valid:
 5. SCM_RRFS_v1beta 
 6. SCM_WoFS_v0
 
-
-
+Let's create a case. From the top level code-directory (ccpp-scm-6.0), change directory to the top-level SCM directory and create a directory were to run all cases and then a directory for each case
 
 ~~~
-$ cmake ../src 
+$ mkdir cases
+$ cd cases
+$ mkdir gfs_v16_bomex
 ~~~
 {: .language-bash}
 
-This will take awhile.
+Create a script (e.g., `create_gfs_v16_bomex_case.sh` with the following
+
+~~~
+#!/bin/bash
+
+module load gnu10/10.3.0-ya
+module load python/3.9.9-jh
+
+export case=bomex
+export suite=SCM_GFS_v16
+export namelist=input_GFS_v16.nml
+export RUN_TIME=86400
+export ITT_OUT=1
+export BIN_DIR=/home/cstan/scm_sandbox/ccpp-scm-6.0/scm/bin
+export RUN_DIR=/scratch/cstan/clim670/ccpp-scm
+
+python ${BIN_DIR}/run_scm.py -c ${case} -s ${suite} -n ${namelist} --runtime ${RUN_TIME} --n_itt_out ${ITT_OUT} --bin_dir ${BIN_DIR} --run_dir ${RUN_DIR}
+~~~
+{: .language-bash}
+
+Make sure the script is executable
 
