@@ -121,7 +121,7 @@ python ${BIN_DIR}/run_scm.py -c ${case} -s ${suite} -n ${namelist} --runtime ${R
 ~~~
 {: .language-bash}
 
-Make sure the script is executable
+Make sure the script is executable.
 
 Before execturing the script, we need to set the user environment for Hopper.
 
