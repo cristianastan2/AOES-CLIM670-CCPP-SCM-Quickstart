@@ -106,7 +106,7 @@ $ cmake ../src
 
 This will take a while.
 
-### What happen when we ran `cmake`
+### What happen when we ran `cmake`?
 
 * Files necssary for building the executable have been written to bin/
 * The CCPP physics and framweork files have been compied to bin/ccpp 
@@ -119,6 +119,8 @@ $ make
 ~~~
 {: .language-bash}
 
+### Now what?
 
+If your compilation has completed, then you are ready to run the case. 
 
 
