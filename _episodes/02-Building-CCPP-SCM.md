@@ -123,10 +123,8 @@ $ make
 ### What happened when we ran `make`?
 
 * The executable `scm` is created and written in bin/ directory.
-* The run script `run-scm.py` is being copied to bin/ directory.
+* The run script `run_scm.py` is being copied to bin/ directory.
 
 ### Now what?
 
 If your compilation has completed, then you are ready to run the case. 
-
-
