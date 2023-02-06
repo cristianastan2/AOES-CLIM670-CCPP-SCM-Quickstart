@@ -20,7 +20,7 @@ Cases are set up via their own namelists in ../etc/case_config. A default physic
 The run script’s options are described below where option abbreviations are included in brackets.
 
 * --case [-c]
-  - This or the --multirun option are the minimum required arguments. The case should correspond to the name of a case in ../etc/case_config (without the .nml extension).
+  --This or the --multirun option are the minimum required arguments. The case should correspond to the name of a case in ../etc/case_config (without the .nml extension).
 
 • - -suite [-s]
 
@@ -31,8 +31,7 @@ the .xml) extension that was supplied in the cmake or ccpp_prebuild step.
   –The namelist should correspond to the name of a file in ../ccpp/physics_namelists (WITH the .nml extension). If this argument is omitted, the default namelist for the given suite in ../src/suite_info.py will be used.
 
 • - -tracers [-t]
-  – The tracers file should correspond to the name of a file in
-../etc/tracer_config (WITH the .txt extension). If this argu- ment is omitted, the default tracer configuration for the given suite in ../src/suite_info.py will be used.
+  – The tracers file should correspond to the name of a file in ../etc/tracer_config (WITH the .txt extension). If this argu- ment is omitted, the default tracer configuration for the given suite in ../src/suite_info.py will be used.
 
 • - -multirun [-m]
   – This or the --case option are the minimum required arguments. When used alone, this option runs through all permutations of supported suites from ../src/suite_info.py and cases from ../src/supported_cases.py. When used in conjunction with the -- file option, only the runs configured in the file will be run.
