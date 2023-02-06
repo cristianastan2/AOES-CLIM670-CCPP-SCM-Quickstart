@@ -140,5 +140,117 @@ $ ./create_gfs_v16_bomex_case.sh
 ~~~
 {: .language-bash}
 
+A NetCDF output file is generated in an output directory located in the RUN_DIR. 
 
+~~~
+$ cd /scratch/cstan/clim670/ccpp-scm-6.0/output_bomex_SCM_GFS_v16
+$ ls
+~~~
+{: .language-bash}
+
+The `output.nc` contains the output written with the frequency set by the `--n_itt` variable.
+
+> ## What is in this file?
+>
+> We will look at the file using `ncdump -h` to understand what is in the file.
+>
+> What variables are in the file?
+> 
+> How many times are in the output file?
+>
+{: .challenge}
+
+We can read the file using Python `xarray`. This is a small file. 
+
+The directory /scratch/cstan/clim670/ccpp-scm-6.0/output_bomex_SCM_GFS_v16 contains two moree files:
+* bomex_SCM_GFS_v16.nml
+* logfile
+
+The namlist file contains the configuration namelist that contains parameters for the SCM infrastructure and the physics configuration namelist. 
+
+The case_config namelist expects the following parameters:
+• case_name
+– Identifier for which dataset (initialization and forcing) to load. This string must correspond to a dataset included in the directory
+ccpp-scm/scm/data/processed_case_input/ (without the file extension). 
+
+• runtime
+– Specify the model runtime in seconds (integer). This should correspond with the forcing dataset used. If a runtime is specified that is longer than the supplied forcing, the forcing is held constant at the last specified values.
+
+• thermo_forcing_type
+– An integer representing how forcing for temperature and moisture state vari-
+ables is applied (1 = total advective tendencies, 2 = horizontal advective ten- dencies with prescribed vertical motion, 3 = relaxation to observed profiles with vertical motion prescribed)
+
+• mom_forcing_type
+– An integer representing how forcing for horizontal momentum state variables
+is applied (1 = total advective tendencies; not implemented yet, 2 = hori- zontal advective tendencies with prescribed vertical motion, 3 = relaxation to observed profiles with vertical motion prescribed)
+
+• relax_time
+– Afloatingpointnumberrepresentingthetimescaleinsecondsfortherelaxation
+forcing (only used if thermo_forcing_type = 3 or mom_forcing_type = 3) 
+
+• sfc_flux_spec
+– A boolean set to .true. if surface flux are specified from the forcing data (there is no need to have surface schemes in a suite definition file if so)
+
+• sfc_roughness_length_cm
+– Surface roughness length in cm for calculating surface-related fields from spec-
+ified surface fluxes (only used if sfc_flux_spec is True). 
+
+• sfc_type
+– An integer representing the character of the surface (0 = sea surface, 1 = land surface, 2 = sea-ice surface)
+
+• reference_profile_choice
+– An integer representing the choice of reference profile to use above the supplied
+initialization and forcing data (1 = “McClatchey” profile, 2 = mid-latitude
+summer standard atmosphere) 
+
+• year
+– An integer representing the year of the initialization time 
+
+• month
+– An integer representing the month of the initialization time 
+
+• day
+– An integer representing the day of the initialization time 
+
+• hour
+– An integer representing the hour of the initialization time 
+
+• column_area
+– A list of floating point values representing the characteristic horizontal domain area of each atmospheric column in square meters (this could be analogous to a 3D model’s horizontal grid size or the characteristic horizontal scale of an observation array; these values are used in scale-aware schemes; if using multiple columns, you may specify an equal number of column areas)
+
+• model_ics
+– A boolean set to .true. if UFS atmosphere initial conditions are used rather
+than field campaign-based initial conditions 
+
+• C_RES
+– An integer representing the grid size of the UFS atmosphere initial conditions; the integer represents the number of grid points in each horizontal direction of each cube tile
+
+• input_type
+– 0 => original DTC format, 1 => DEPHY-SCM format.
+
+Optional variables (that may be overridden via run script command line arguments) are:
+• vert_coord_file
+– File containing FV3 vertical grid coefficients.
+
+• dt
+– Time step in seconds (floating point)
+
+• n_itt_out
+– Specify the period of the instantaneous model output in number of timesteps
+(integer). 
+
+• n_itt_diag
+– Specify the period of the instantaneous and time-averaged diagnostic output in number of timesteps (integer).
+
+• n_levels
+– Specify the integer number of vertical levels.
+
+The physics_config expects the following parameters:
+• physics_nml
+- The name should correspond to the name of a file in ../ccpp/physics_namelists (WITH the .nml extension)
+
+• physics_suite
+– The suite should correspond to the name of a suite in ../ccpp/suites (without the .xml) 
+
+The logfile contains information from the running time. 
 
