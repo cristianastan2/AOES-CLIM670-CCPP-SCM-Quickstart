@@ -104,7 +104,7 @@ $ mkdir gfs_v16_bomex
 ~~~
 {: .language-bash}
 
-Create a script (e.g., `create_gfs_v16_bomex_case.sh` with the following
+Create a script (e.g., `create_gfs_v16_bomex_case.sh`) with the following
 
 ~~~
 #!/bin/bash
@@ -121,7 +121,31 @@ python ${BIN_DIR}/run_scm.py -c ${case} -s ${suite} -n ${namelist} --runtime ${R
 ~~~
 {: .language-bash}
 
-Make sure the script is executable.
+Make sure the script is executable. To check
+
+~~~
+$ ls -l create_gfs_v16_bomex_case.sh
+~~~
+{: .language-bash}
+
+~~~
+-rwxr--r-- 1 cstan users 456 Feb  5 17:10 create_gfs_v16_bomex_case.sh
+~~~
+{: .output}
+
+If the sequence `-rwxr--r--` does not have the execute (x) permission we can addd the execute permission:
+
+~~~
+chmod u+x create_gfs_v16_bomex_case.sh 
+~~~
+{: .language-bash}
+
+> ## Check if your script has the execute permission
+>
+> Does your file has the execute permsion? 
+>
+{: .challenge}
+
 
 Before execturing the script, we need to set the user environment for Hopper.
 
@@ -135,7 +159,7 @@ $ source scm/etc/Hopper_setup_gnu.sh
 Now we are ready to strat running our gfs_v16_bomex_case. 
 
 ~~~
-$ cdd scm/cases/gfs_v16_bomex/
+$ cd scm/cases/gfs_v16_bomex/
 $ ./create_gfs_v16_bomex_case.sh
 ~~~
 {: .language-bash}
