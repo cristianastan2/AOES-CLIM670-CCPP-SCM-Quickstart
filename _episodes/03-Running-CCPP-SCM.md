@@ -32,63 +32,48 @@ The run script’s options are described below where option abbreviations are in
 >The tracers file should correspond to the name of a file in ../etc/tracer_config (WITH the .txt extension). If this argu- ment is omitted, the default tracer configuration for the given suite in ../src/suite_info.py will be used.
 >
 --multirun [-m]
->
 >This or the --case option are the minimum required arguments. When used alone, this option runs through all permutations of supported suites from ../src/suite_info.py and cases from ../src/supported_cases.py. When used in conjunction with the -- file option, only the runs configured in the file will be run.
 
 --file [-f]
->
 >This option may be used in conjunction with the --multirun argument. It specifies a path and filename to a python file where multiple runs are configured. 
 >
 --gdb [-g]
->
 >Use this to run the executable through the gdb debugger (if it is installed on the system).
 >
 --docker [-d]
->
 >Use this argument when running in a docker container in order to successfully mount a volume between the host machine and the Docker container instance and to share the output and plots with the host machine. 
 >
 --runtime
->
 >Use this to override the runtime provided in the case configuration namelist. 
 >
 --runtime_mult
->
 >Use this to override the runtime provided in the case configuration namelist by multiplying the runtime by the given value. This is used, for example, in regression testing to reduce total runtimes.
 >
 --levels [-l]
->
 >Use this to change the number of vertical levels.
 >
 --npz_type
->
 >Use this to change the type of FV3 vertical grid to produce (see src/scm_vgrid.F90 for valid values).
 > 
 --vert_coord_file
->
 >Use this to specify the path/filename of a file containing the a_k and b_k coefficients for the vertical grid generation code to use.
 >
 --bin_dir
->
 >Use this to specify the path to the build directory.
 >
 --run_dir
->
 >Use this to specify the path to the run directory.
 >
 --case_data_dir
->
 >Use this to specify the path to the directory containing the case data file (useful for using the DEPHY case repository). 
 >
 --n_itt_out
->
 >Use this to specify the period of writing instantaneous output in timesteps (if different than the default specified in the script).
 >
 --n_itt_diagt
->
 >Use this to specify the period of writing instantaneous and time-averaged diagnostic output in timesteps (if different than the default specified in the script).
 > 
 --timestep [-dt]
->
 >Use this to specify the timestep to use (if different than the default specified in ../src/suite_info.py).
 >
 --verbose [-v]
@@ -204,11 +189,9 @@ The namlist file contains the configuration namelist that contains parameters fo
 The case_config namelist expects the following parameters:
 
 * case_name
->
 >Identifier for which dataset (initialization and forcing) to load. This string must correspond to a dataset included in the directory ccpp-scm/scm/data/processed_case_input/ (without the file extension). 
 >
 * runtime
->
 >Specify the model runtime in seconds (integer). This should correspond with the forcing dataset used. If a runtime is specified that is longer than the supplied forcing, the forcing is held constant at the last specified values.
 >
 * thermo_forcing_typee
