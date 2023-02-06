@@ -164,7 +164,7 @@ $ ./create_gfs_v16_bomex_case.sh
 ~~~
 {: .language-bash}
 
-A NetCDF output file is generated in an output directory located in the RUN_DIR. 
+A NetCDF output file is generated in a directory located in the RUN_DIR. 
 
 ~~~
 $ cd /scratch/cstan/clim670/ccpp-scm-6.0/output_bomex_SCM_GFS_v16
