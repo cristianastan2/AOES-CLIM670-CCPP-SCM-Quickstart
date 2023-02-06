@@ -149,7 +149,7 @@ export RUN_DIR=/scratch/cstan/clim670/ccpp-scm-6.0  # Make sure RUN_DIR exists
 
 python ${BIN_DIR}/run_scm.py -c ${case} -s ${suite} -n ${namelist} --runtime ${RUN_TIME} --n_itt_out ${ITT_OUT} --bin_dir ${BIN_DIR} --run_dir ${RUN_DIR}
 ~~~
-{: .language-bash}
+{: .output}
 
 Make sure the script is executable. To check
 
