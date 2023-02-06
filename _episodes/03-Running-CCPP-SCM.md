@@ -133,16 +133,16 @@ $ ls -l create_gfs_v16_bomex_case.sh
 ~~~
 {: .output}
 
-If the sequence `-rwxr--r--` does not have the execute (x) permission we can addd the execute permission:
+If the sequence `-rwxr--r--` does not have the execute (x) permission we can add it:
 
 ~~~
-chmod u+x create_gfs_v16_bomex_case.sh 
+$ chmod u+x create_gfs_v16_bomex_case.sh 
 ~~~
 {: .language-bash}
 
 > ## Check if your script has the execute permission
 >
-> Does your file has the execute permsion? 
+> Does your file has the execute (x) permsion? 
 >
 {: .challenge}
 
