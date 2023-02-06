@@ -21,7 +21,7 @@ The run script’s options are described below where option abbreviations are in
 
 `--case [-c]`
 >
->This or the `--multirun` option are the minimum required arguments. The case should correspond to the name of a case in ../etc/case_config (without the >.nml extension).
+>This or the `--multirun` option are the minimum required arguments. The case should correspond to the name of a case in ../etc/case_config (without the .nml extension).
 >
 
 `--suite [-s]`
@@ -31,20 +31,20 @@ The run script’s options are described below where option abbreviations are in
 
 `--namelist [-n]`
 >
->The namelist should correspond to the name of a file in ../ccpp/physics_namelists (WITH the .nml extension). If this argument is omitted, the default >namelist for the given suite in ../src/suite_info.py will be used.
+>The namelist should correspond to the name of a file in ../ccpp/physics_namelists (WITH the .nml extension). If this argument is omitted, the default namelist for the given suite in ../src/suite_info.py will be used.
 >
 
 `--tracers [-t]`
 >
->The tracers file should correspond to the name of a file in ../etc/tracer_config (WITH the .txt extension). If this argu- ment is omitted, the default >tracer configuration for the given suite in ../src/suite_info.py will be used.
+>The tracers file should correspond to the name of a file in ../etc/tracer_config (WITH the .txt extension). If this argument is omitted, the default tracer configuration for the given suite in ../src/suite_info.py will be used.
 >
 
 `--multirun [-m]`
 >
->This or the --case option are the minimum required arguments. When used alone, this option runs through all permutations of supported suites from >../src/suite_info.py and cases from ../src/supported_cases.py. When used in conjunction with the -- file option, only the runs configured in the file > >will be run.
+>This or the --case option are the minimum required arguments. When used alone, this option runs through all permutations of supported suites from ../src/suite_info.py and cases from ../src/supported_cases.py. When used in conjunction with the -- file option, only the runs configured in the file will be run.
 
 `--file [-f]`
->This option may be used in conjunction with the --multirun argument. It specifies a path and filename to a python file where multiple runs are >configured. 
+>This option may be used in conjunction with the --multirun argument. It specifies a path and filename to a python file where multiple runs are configured. 
 >
 
 `--gdb [-g]`
@@ -53,7 +53,7 @@ The run script’s options are described below where option abbreviations are in
 >
 
 `--docker [-d]`
->Use this argument when running in a docker container in order to successfully mount a volume between the host machine and the Docker container instance >and to share the output and plots with the host machine. 
+>Use this argument when running in a docker container in order to successfully mount a volume between the host machine and the Docker container instance and to share the output and plots with the host machine. 
 >
 
 `--runtime`
@@ -102,7 +102,7 @@ The run script’s options are described below where option abbreviations are in
 
 `--n_itt_diagt`
 >
->Use this to specify the period of writing instantaneous and time-averaged diagnostic output in timesteps (if different than the default specified in the >script).
+>Use this to specify the period of writing instantaneous and time-averaged diagnostic output in timesteps (if different than the default specified in the script).
 > 
 
 `--timestep [-dt]`
@@ -291,7 +291,7 @@ is applied (1 = total advective tendencies; not implemented yet, 2 = hori- zonta
 
 * column_area
 >
->A list of floating point values representing the characteristic horizontal domain area of each atmospheric column in square meters (this could be >analogous to a 3D model’s horizontal grid size or the characteristic horizontal scale of an observation array; these values are used in scale-aware >schemes; if using multiple columns, you may specify an equal number of column areas)
+>A list of floating point values representing the characteristic horizontal domain area of each atmospheric column in square meters (this could be analogous to a 3D model’s horizontal grid size or the characteristic horizontal scale of an observation array; these values are used in scale-aware schemes; if using multiple columns, you may specify an equal number of column areas)
 >
 
 * model_ics
@@ -301,7 +301,7 @@ is applied (1 = total advective tendencies; not implemented yet, 2 = hori- zonta
 
 * C_RES
 >
->An integer representing the grid size of the UFS atmosphere initial conditions; the integer represents the number of grid points in each horizontal >direction of each cube tile
+>An integer representing the grid size of the UFS atmosphere initial conditions; the integer represents the number of grid points in each horizontal direction of each cube tile
 >
 
 * input_type
@@ -334,12 +334,13 @@ Optional variables (that may be overridden via run script command line arguments
 >
 >Specify the integer number of vertical levels.
 
-
 The physics_config expects the following parameters:
 
 * physics_nml
 >
 >The name should correspond to the name of a file in ../ccpp/physics_namelists (WITH the .nml extension)
+>
+
 * physics_suite
 >
 >The suite should correspond to the name of a suite in ../ccpp/suites (without the .xml) 
