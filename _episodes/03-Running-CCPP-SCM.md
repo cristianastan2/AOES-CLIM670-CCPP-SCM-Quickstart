@@ -19,9 +19,11 @@ Cases are set up via their own namelists in ../etc/case_config. A default physic
 
 The run script’s options are described below where option abbreviations are included in brackets.
 • - -case [-c]
+
   – This or the --multirun option are the minimum required arguments. The case should correspond to the name of a case in ../etc/case_config (without the .nml extension).
 
 • - -suite [-s]
+
   – The suite should correspond to the name of a suite in ../ccpp/suites (without
 the .xml) extension that was supplied in the cmake or ccpp_prebuild step. 
 
