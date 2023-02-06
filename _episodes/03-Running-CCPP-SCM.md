@@ -20,63 +20,92 @@ Cases are set up via their own namelists in ../etc/case_config. A default physic
 The run script’s options are described below where option abbreviations are included in brackets.
 
 --case [-c]
->This or the `--multirun` option are the minimum required arguments. The case should correspond to the name of a case in ../etc/case_config (without the .nml extension).
+>
+>This or the `--multirun` option are the minimum required arguments. The case should correspond to the name of a case in ../etc/case_config (without the >.nml extension).
 >
 --suite [-s]
+>
 >The suite should correspond to the name of a suite in ../ccpp/suites (without the .xml) extension that was supplied in the cmake or ccpp_prebuild step. 
 >
+
 --namelist [-n]
->The namelist should correspond to the name of a file in ../ccpp/physics_namelists (WITH the .nml extension). If this argument is omitted, the default namelist for the given suite in ../src/suite_info.py will be used.
 >
+>The namelist should correspond to the name of a file in ../ccpp/physics_namelists (WITH the .nml extension). If this argument is omitted, the default >namelist for the given suite in ../src/suite_info.py will be used.
+>
+
 --tracers [-t]
->The tracers file should correspond to the name of a file in ../etc/tracer_config (WITH the .txt extension). If this argu- ment is omitted, the default tracer configuration for the given suite in ../src/suite_info.py will be used.
 >
+>The tracers file should correspond to the name of a file in ../etc/tracer_config (WITH the .txt extension). If this argu- ment is omitted, the default >tracer configuration for the given suite in ../src/suite_info.py will be used.
+>
+
 --multirun [-m]
->This or the --case option are the minimum required arguments. When used alone, this option runs through all permutations of supported suites from ../src/suite_info.py and cases from ../src/supported_cases.py. When used in conjunction with the -- file option, only the runs configured in the file will be run.
+>
+>This or the --case option are the minimum required arguments. When used alone, this option runs through all permutations of supported suites from >../src/suite_info.py and cases from ../src/supported_cases.py. When used in conjunction with the -- file option, only the runs configured in the file > >will be run.
 
 --file [-f]
->This option may be used in conjunction with the --multirun argument. It specifies a path and filename to a python file where multiple runs are configured. 
+>This option may be used in conjunction with the --multirun argument. It specifies a path and filename to a python file where multiple runs are >configured. 
 >
+
 --gdb [-g]
 >Use this to run the executable through the gdb debugger (if it is installed on the system).
 >
+
 --docker [-d]
->Use this argument when running in a docker container in order to successfully mount a volume between the host machine and the Docker container instance and to share the output and plots with the host machine. 
+>Use this argument when running in a docker container in order to successfully mount a volume between the host machine and the Docker container instance >and to share the output and plots with the host machine. 
 >
+
 --runtime
 >Use this to override the runtime provided in the case configuration namelist. 
 >
+
 --runtime_mult
+>
 >Use this to override the runtime provided in the case configuration namelist by multiplying the runtime by the given value. This is used, for example, in regression testing to reduce total runtimes.
 >
+
 --levels [-l]
+>
 >Use this to change the number of vertical levels.
 >
+
 --npz_type
 >Use this to change the type of FV3 vertical grid to produce (see src/scm_vgrid.F90 for valid values).
 > 
+
 --vert_coord_file
 >Use this to specify the path/filename of a file containing the a_k and b_k coefficients for the vertical grid generation code to use.
 >
 --bin_dir
+>
 >Use this to specify the path to the build directory.
 >
+
 --run_dir
+>
 >Use this to specify the path to the run directory.
 >
+
 --case_data_dir
+>
 >Use this to specify the path to the directory containing the case data file (useful for using the DEPHY case repository). 
 >
+
 --n_itt_out
+>
 >Use this to specify the period of writing instantaneous output in timesteps (if different than the default specified in the script).
 >
+
 --n_itt_diagt
->Use this to specify the period of writing instantaneous and time-averaged diagnostic output in timesteps (if different than the default specified in the script).
+>Use this to specify the period of writing instantaneous and time-averaged diagnostic output in timesteps (if different than the default specified in the >script).
 > 
+
 --timestep [-dt]
+>
 >Use this to specify the timestep to use (if different than the default specified in ../src/suite_info.py).
 >
+
 --verbose [-v]
+>
 >Use this option to see additional debugging output from the run script and screen output from the executable.
 >
 When invoking the run script, the only required argument is the name of the case to run. The case name used must match one of the case configuration files located in ../etc/case_config (without the .nml extension!). If specifying a suite other than the default, the suite name used must match the value of the suite name in one of the suite definition files located in ../../ccpp/suites (Note: not the filename of the suite definition file). 
@@ -189,16 +218,23 @@ The namlist file contains the configuration namelist that contains parameters fo
 The case_config namelist expects the following parameters:
 
 * case_name
->Identifier for which dataset (initialization and forcing) to load. This string must correspond to a dataset included in the directory ccpp-scm/scm/data/processed_case_input/ (without the file extension). 
 >
+>Identifier for which dataset (initialization and forcing) to load. This string must correspond to a dataset included in the directory ccpp->scm/scm/data/processed_case_input/ (without the file extension). 
+>
+
 * runtime
->Specify the model runtime in seconds (integer). This should correspond with the forcing dataset used. If a runtime is specified that is longer than the supplied forcing, the forcing is held constant at the last specified values.
 >
+>Specify the model runtime in seconds (integer). This should correspond with the forcing dataset used. If a runtime is specified that is longer than the >supplied forcing, the forcing is held constant at the last specified values.
+>
+
 * thermo_forcing_typee
+>
 >An integer representing how forcing for temperature and moisture state vari-
 ables is applied (1 = total advective tendencies, 2 = horizontal advective ten- dencies with prescribed vertical motion, 3 = relaxation to observed profiles with vertical motion prescribed)
 >
+
 * mom_forcing_type
+>
 >An integer representing how forcing for horizontal momentum state variables
 is applied (1 = total advective tendencies; not implemented yet, 2 = hori- zontal advective tendencies with prescribed vertical motion, 3 = relaxation to observed profiles with vertical motion prescribed)
 >
@@ -206,56 +242,87 @@ is applied (1 = total advective tendencies; not implemented yet, 2 = hori- zonta
 >Afloatingpointnumberrepresentingthetimescaleinsecondsfortherelaxation forcing (only used if thermo_forcing_type = 3 or mom_forcing_type = 3) 
 >
 * sfc_flux_spec
+>
 >A boolean set to .true. if surface flux are specified from the forcing data (there is no need to have surface schemes in a suite definition file if so)
 >
+
 * sfc_roughness_length_cm
+>
 >Surface roughness length in cm for calculating surface-related fields from specified surface fluxes (only used if sfc_flux_spec is True). 
 >
+
 * sfc_type
 >An integer representing the character of the surface (0 = sea surface, 1 = land surface, 2 = sea-ice surface)
 >
+
 * reference_profile_choice
+>
 >An integer representing the choice of reference profile to use above the supplied initialization and forcing data (1 = “McClatchey” profile, 2 = mid-latitude summer standard atmosphere) 
 >
+
 * year
+>
 >An integer representing the year of the initialization time 
 >
+
 * month
+>
 >An integer representing the month of the initialization time 
 >
+
 * day
+>
 >An integer representing the day of the initialization time 
 >
+
 * hour
+>
 >An integer representing the hour of the initialization time 
 >
+
 * column_area
->A list of floating point values representing the characteristic horizontal domain area of each atmospheric column in square meters (this could be analogous to a 3D model’s horizontal grid size or the characteristic horizontal scale of an observation array; these values are used in scale-aware schemes; if using multiple columns, you may specify an equal number of column areas)
 >
+>A list of floating point values representing the characteristic horizontal domain area of each atmospheric column in square meters (this could be >analogous to a 3D model’s horizontal grid size or the characteristic horizontal scale of an observation array; these values are used in scale-aware >schemes; if using multiple columns, you may specify an equal number of column areas)
+>
+
 * model_ics
+>
 >A boolean set to .true. if UFS atmosphere initial conditions are used rather than field campaign-based initial conditions 
 >
+
 * C_RES
->An integer representing the grid size of the UFS atmosphere initial conditions; the integer represents the number of grid points in each horizontal direction of each cube tile
 >
+>An integer representing the grid size of the UFS atmosphere initial conditions; the integer represents the number of grid points in each horizontal >direction of each cube tile
+>
+
 * input_type
+>
 >0 => original DTC format, 1 => DEPHY-SCM format.
 >
 Optional variables (that may be overridden via run script command line arguments) are:
 
 * vert_coord_file
+>
 >File containing FV3 vertical grid coefficients.
 >
+
 * dt
+>
 >Time step in seconds (floating point)
 >
+
 * n_itt_out
+>
 >Specify the period of the instantaneous model output in number of timesteps (integer). 
 >
+
 * n_itt_diag
+>
 >Specify the period of the instantaneous and time-averaged diagnostic output in number of timesteps (integer).
 >
+
 * n_levels
+>
 >Specify the integer number of vertical levels.
 
 
