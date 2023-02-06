@@ -18,8 +18,8 @@ Running a case requires four pieces of information:
 Cases are set up via their own namelists in ../etc/case_config. A default physics suite is provided as a user-editable variable in the script and default namelists and tracer configurations are associated with each physics suite (through ../src/suite_info.py), so, technically, one must only specify a case to run with the SCM when running just one integration. For running multiple integrations at once, one need only specify one argument (-m) which runs through all permutations of supported suites from ../src/suite_info.py and cases from ../src/supported_cases.py. 
 
 The run script’s options are described below where option abbreviations are included in brackets.
-• - -case [-c]
 
+* --case [-c]
   – This or the --multirun option are the minimum required arguments. The case should correspond to the name of a case in ../etc/case_config (without the .nml extension).
 
 • - -suite [-s]
