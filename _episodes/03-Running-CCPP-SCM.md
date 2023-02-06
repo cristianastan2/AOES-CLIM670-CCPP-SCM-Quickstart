@@ -202,6 +202,12 @@ $ ls
 ~~~
 {: .language-bash}
 
+~~~
+bomex_SCM_GFS_v16.nml  logfile  output.nc
+~~~
+{: .output}
+
+
 The `output.nc` contains the output written with the frequency set by the `--n_itt` variable.
 
 > ## What is in this file?
@@ -216,11 +222,7 @@ The `output.nc` contains the output written with the frequency set by the `--n_i
 
 We can read the file using Python `xarray`. This is a small file. 
 
-The directory /scratch/cstan/clim670/ccpp-scm-6.0/output_bomex_SCM_GFS_v16 contains two moree files:
-* bomex_SCM_GFS_v16.nml
-* logfile
-
-The namlist file contains the configuration namelist that contains parameters for the SCM infrastructure and the physics configuration namelist. 
+The namlist file `.nml` contains the configuration namelist that contains parameters for the SCM infrastructure and the physics configuration namelist. 
 
 The case_config namelist expects the following parameters:
 
@@ -342,5 +344,5 @@ The physics_config expects the following parameters:
 >
 >The suite should correspond to the name of a suite in ../ccpp/suites (without the .xml) 
 >
-The logfile contains information from the running time. 
+The `logfile` contains information from the running time. 
 
