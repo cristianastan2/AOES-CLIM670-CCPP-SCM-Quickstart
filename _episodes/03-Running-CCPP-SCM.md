@@ -119,11 +119,10 @@ When invoking the run script, the only required argument is the name of the case
 
 As part of the sixth CCPP release, the following suite names are valid:
 1. SCM_GFS_v16
-2. SCM_GFS_v17p8 
-3. SCM_RAP
-4. SCM_HRRR
-5. SCM_RRFS_v1beta 
-6. SCM_WoFS_v0
+2. SCM_GFS_v16_RRTMGP
+3. SCM_GFS_v17_p8_ugwpv1 
+5. SCM_HRRR_gf
+7. SCM_WoFS_v0
 
 Let's create a case. From the top level code-directory (ccpp-scm-6.0), change directory to the top-level SCM directory and create a directory were to run all cases and then a directory for each case
 
