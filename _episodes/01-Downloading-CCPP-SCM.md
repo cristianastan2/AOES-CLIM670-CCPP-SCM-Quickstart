@@ -26,7 +26,7 @@ $ git clone --recursive -b v7.0.0 https://github.com/NCAR/ccpp-scm ccpp-scm-7.0
 
 This will take a while ...
 
-Change to the `ccpp-scm-6.0` directory
+Change to the `ccpp-scm-7.0` directory
 ~~~
 $ cd ccpp-scm-7.0
 ~~~
