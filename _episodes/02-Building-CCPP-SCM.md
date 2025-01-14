@@ -35,7 +35,7 @@ If f90nml is installed, this command will succeed silently, otherwise an ImportE
 
 ~~~
 $ module load anaconda3
-$ pip install --user f90nml ==0.19
+$ pip install --user f90nml ==1.4.4
 ~~~
 {: .language-bash}
 
