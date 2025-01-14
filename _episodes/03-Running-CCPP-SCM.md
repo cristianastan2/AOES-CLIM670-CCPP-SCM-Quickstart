@@ -171,12 +171,12 @@ $ chmod u+x create_gfs_v16_bomex_case.sh
 
 > ## Check if your script has the execute permission
 >
-> Does your file has the execute (x) permsion? 
+> Does your file have the execute (x) permsion? 
 >
 {: .challenge}
 
 
-Before execturing the script, we need to set the user environment for Hopper.
+Before executing the script, we need to set the user environment for Hopper.
 
 From the top-level code directory (ccpp-scm-7.0), source the bash script for Hopper:
 
@@ -209,7 +209,7 @@ $ ./create_gfs_v16_bomex_case.sh
 A NetCDF output file is generated in a directory located in the RUN_DIR. 
 
 ~~~
-$ cd /scratch/cstan/clim670/ccpp-scm-6.0/output_bomex_SCM_GFS_v16
+$ cd /scratch/cstan/clim670/ccpp-scm-7.0/output_bomex_SCM_GFS_v16
 $ ls
 ~~~
 {: .language-bash}
@@ -260,7 +260,7 @@ ables is applied (1 = total advective tendencies, 2 = horizontal advective ten- 
 is applied (1 = total advective tendencies; not implemented yet, 2 = hori- zontal advective tendencies with prescribed vertical motion, 3 = relaxation to observed profiles with vertical motion prescribed)
 >
 * relax_time
->Afloatingpointnumberrepresentingthetimescaleinsecondsfortherelaxation forcing (only used if thermo_forcing_type = 3 or mom_forcing_type = 3) 
+>A floatingpoint number representing the timescale inseconds for the relaxation forcing (only used if thermo_forcing_type = 3 or mom_forcing_type = 3) 
 >
 * sfc_flux_spec
 >
