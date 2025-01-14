@@ -206,6 +206,14 @@ $ ./create_gfs_v16_bomex_case.sh
 ~~~
 {: .language-bash}
 
+A succssful run will generate a message like:
+
+~~~
+INFO: Process "(case=bomex, suite=SCM_GFS_v16, namelist=input_GFS_v16.nml" completed successfully
+INFO:     Elapsed time: 4.579s
+~~~
+{: .output}
+
 A NetCDF output file is generated in a directory located in the RUN_DIR. 
 
 ~~~
