@@ -127,6 +127,8 @@ $ make
 ~~~
 {: .language-bash}
 
+This will take a while and the progress is shown as a percentage. 
+
 ### What happened when we ran `make`?
 
 * The executable `scm` is created and written in bin/ directory.
