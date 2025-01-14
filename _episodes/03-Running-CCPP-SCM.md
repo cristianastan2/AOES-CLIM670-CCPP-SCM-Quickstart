@@ -189,6 +189,17 @@ Now we are ready to strat running our gfs_v16_bomex_case.
 
 ~~~
 $ cd scm/cases/gfs_v16_bomex/
+~~~
+
+Get a compute node with:
+
+~~~
+salloc -p interactive -C amd -n 1
+~~~
+
+Run:
+
+~~~
 $ ./create_gfs_v16_bomex_case.sh
 ~~~
 {: .language-bash}
