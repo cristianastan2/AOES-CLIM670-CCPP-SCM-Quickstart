@@ -48,7 +48,7 @@ $ ls
 
 Hopper is not one of the preconfigured platforms. To get the corresponding file for Hopper: 
 ~~~
-$ cp /home/cstan/classes/clim670/ccpp-scm/scm/etc/Hopper_setup_gnu.sh* . 
+$ cp /home/cstan/scm_sandbox/ccpp-scm-7.0/scm/etc/Hopper_setup_gnu.sh . 
 ~~~
 {: .language-bash}
 
