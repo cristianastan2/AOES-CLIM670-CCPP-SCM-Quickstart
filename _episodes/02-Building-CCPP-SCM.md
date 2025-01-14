@@ -69,7 +69,7 @@ $ source scm/etc/Hopper_setup_gnu.sh
 
 Ignore the warnings. 
 
-The first step in compiling the CCPP and SCM is to properly setup your user environment as described in sections above. The second step is to download the lookup tables and other large datasets (large binaries, <1 GB) needed by the physics schemes and place them in the correct directory. I have downloaded these files and you will create symbolic links:
+The first step in compiling the CCPP and SCM is to properly setup your user environment as described in sections above. The second step is to download the lookup tables and other large datasets (large binaries, <1 GB) needed by the physics schemes and place them in the correct directory. I have downloaded these files and you will create symbolic links (Note: Do not change username 'cstan' with your username:
 
 ~~~
 $ cd /home/username/classes/clim670/ccpp-scm-7.0/scm/data/
@@ -104,7 +104,14 @@ $ cmake ../src
 ~~~
 {: .language-bash}
 
-This will take a while.
+This will take a while. A end of a succssful build will look like 
+
+~~~
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/username/classes/clim670/ccpp-scm-7.0/scm/bin
+~~~
+{: .output}
 
 ### What happened when we ran `cmake`?
 
