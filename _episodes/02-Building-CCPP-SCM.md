@@ -8,7 +8,7 @@ objectives:
 keypoints:
 ---
 You have now downloaded all the model components. Let's take a look:
-From your `/home/username/classes/clim670/ccpp-scm-6.0` directory, see what is there.
+From your `/home/username/classes/clim670/ccpp-scm-7.0` directory, see what is there.
 ~~~
 $ ls
 ~~~
@@ -41,25 +41,25 @@ $ pip install --user f90nml ==0.19
 
 Platform-specific scripts are provided to load modules and set the user environment for preconfigured platforms. These scripts load compiler modules (Fortran 2008-compliant), the NetCDF module, Python environment, etc. and set compiler and environment variables. 
 ~~~
-$ cd /home/username/classes/clim670/ccpp-scm-6.0/scm/etc/
+$ cd /home/username/classes/clim670/ccpp-scm-7.0/scm/etc/
 $ ls 
 ~~~
 {: .language-bash}
 
 Hopper is not one of the preconfigured platforms. To get the corresponding file for Hopper: 
 ~~~
-$ cp /home/cstan/classes/clim670/ccpp-scm/scm/etc/Hopper_setup* . 
+$ cp /home/cstan/classes/clim670/ccpp-scm/scm/etc/Hopper_setup_gnu.sh* . 
 ~~~
 {: .language-bash}
 
 Let's take a look:
-From your `/home/username/classes/clim670/ccpp-scm-6.0/scm/etc/` directory, see what is there.
+From your `/home/username/classes/clim670/ccpp-scm-7.0/scm/etc/` directory, see what is there.
 ~~~
 $ ls
 ~~~
 {: .language-bash}
 
-Now you have two new files that will configure the building environmeent for Hopper. One can be used for the t/csh shell and the other for the bash shell. From the top-level code directory (ccpp-scm-6.0), source the bash script for Hopper:
+Now you have two new files that will configure the building environmeent for Hopper. One can be used for the t/csh shell and the other for the bash shell. From the top-level code directory (ccpp-scm-7.0), source the bash script for Hopper:
 
 ~~~
 $ cd ../../
@@ -72,7 +72,7 @@ Ignore the warnings.
 The first step in compiling the CCPP and SCM is to properly setup your user environment as described in sections above. The second step is to download the lookup tables and other large datasets (large binaries, <1 GB) needed by the physics schemes and place them in the correct directory. I have downloaded these files and you will create symbolic links:
 
 ~~~
-$ cd /home/username/classes/clim670/ccpp-scm-6.0/scm/data/
+$ cd /home/username/classes/clim670/ccpp-scm-7.0/scm/data/
 $ ln -fs /home/cstan/classes/clim670/ccpp-scm/scm/data/comparison_data/
 $ ln -fs /home/cstan/classes/clim670/ccpp-scm/scm/data/physics_input_data/
 $ ln -fs /home/cstan/classes/clim670/ccpp-scm/scm/data/processed_case_input/
@@ -82,7 +82,7 @@ $ ln -fs /home/cstan/classes/clim670/ccpp-scm/scm/data/raw_case_input/
 
 Above were the one-time setup setps, now we move on to the steps you will do everytime to setup a new model experiment and run it.
 
-1. From the top level code-directory (ccpp-scm-6.0), change directory to the top-level SCM directory: 
+1. From the top level code-directory (ccpp-scm-7.0), change directory to the top-level SCM directory: 
 
 ~~~
 $ cd scm
