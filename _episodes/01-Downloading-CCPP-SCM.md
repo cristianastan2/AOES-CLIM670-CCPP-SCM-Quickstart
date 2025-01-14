@@ -19,8 +19,8 @@ $ cd /home/cstan/classes/clim670
 
 Download the CCPP-SCM from Github
 ~~~
-module load git
-git clone --recursive -b v7.0.0 https://github.com/NCAR/ccpp-scm ccpp-scm-7.0 
+$ module load git
+$ git clone --recursive -b v7.0.0 https://github.com/NCAR/ccpp-scm ccpp-scm-7.0 
 ~~~
 {: .language-bash}
 
