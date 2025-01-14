@@ -144,7 +144,7 @@ export namelist=input_GFS_v16.nml
 export RUN_TIME=86400
 export ITT_OUT=1
 export BIN_DIR=/home/cstan/scm_sandbox/ccpp-scm-6.0/scm/bin
-export RUN_DIR=/scratch/cstan/clim670/ccpp-scm-6.0  # Make sure RUN_DIR exists
+export RUN_DIR=/scratch/cstan/clim670/ccpp-scm-7.0  # Make sure RUN_DIR exists
 
 python ${BIN_DIR}/run_scm.py -c ${case} -s ${suite} -n ${namelist} --runtime ${RUN_TIME} --n_itt_out ${ITT_OUT} --bin_dir ${BIN_DIR} --run_dir ${RUN_DIR}
 ~~~
