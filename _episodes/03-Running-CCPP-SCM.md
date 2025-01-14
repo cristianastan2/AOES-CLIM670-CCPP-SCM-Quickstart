@@ -124,7 +124,7 @@ As part of the sixth CCPP release, the following suite names are valid:
 5. SCM_HRRR_gf
 7. SCM_WoFS_v0
 
-Let's create a case. From the top level code-directory (ccpp-scm-6.0), change directory to the top-level SCM directory and create a directory were to run all cases and then a directory for each case
+Let's create a case. From the top level code-directory (ccpp-scm-7.0), change directory to the top-level SCM directory and create a directory were to run all cases and then a directory for each case
 
 ~~~
 $ mkdir cases
@@ -143,7 +143,7 @@ export suite=SCM_GFS_v16
 export namelist=input_GFS_v16.nml
 export RUN_TIME=86400
 export ITT_OUT=1
-export BIN_DIR=/home/cstan/scm_sandbox/ccpp-scm-6.0/scm/bin
+export BIN_DIR=/home/cstan/scm_sandbox/ccpp-scm-7.0/scm/bin
 export RUN_DIR=/scratch/cstan/clim670/ccpp-scm-7.0  # Make sure RUN_DIR exists
 
 python ${BIN_DIR}/run_scm.py -c ${case} -s ${suite} -n ${namelist} --runtime ${RUN_TIME} --n_itt_out ${ITT_OUT} --bin_dir ${BIN_DIR} --run_dir ${RUN_DIR}
@@ -178,7 +178,7 @@ $ chmod u+x create_gfs_v16_bomex_case.sh
 
 Before execturing the script, we need to set the user environment for Hopper.
 
-From the top-level code directory (ccpp-scm-6.0), source the bash script for Hopper:
+From the top-level code directory (ccpp-scm-7.0), source the bash script for Hopper:
 
 ~~~
 $ source scm/etc/Hopper_setup_gnu.sh
