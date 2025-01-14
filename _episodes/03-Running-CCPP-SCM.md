@@ -240,7 +240,7 @@ The `output.nc` contains the output written with the frequency set by the `--n_i
 >
 {: .challenge}
 
-We can read the file using Python `xarray`. This is a small file. 
+We can read the file using Python `xarray`. This is a small file. If you need help, here is an [example](https://github.com/cristianastan2/AOES-CLIM670-Earth-System-Modeling/blob/gh-pages/code/plotting/read_ccpp_scm.ipynb)
 
 The namlist file `.nml` contains the configuration namelist that contains parameters for the SCM infrastructure and the physics configuration namelist. 
 
