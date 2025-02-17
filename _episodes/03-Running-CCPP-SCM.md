@@ -117,7 +117,7 @@ The run script’s options are described below where option abbreviations are in
 
 When invoking the run script, the only required argument is the name of the case to run. The case name used must match one of the case configuration files located in ../etc/case_config (without the .nml extension!). If specifying a suite other than the default, the suite name used must match the value of the suite name in one of the suite definition files located in ../../ccpp/suites (Note: not the filename of the suite definition file). 
 
-As part of the sixth CCPP release, the following suite names are valid:
+As part of the v7 CCPP release, the following suite names are valid:
 1. SCM_GFS_v16
 2. SCM_GFS_v16_RRTMGP
 3. SCM_GFS_v17_p8_ugwpv1 
