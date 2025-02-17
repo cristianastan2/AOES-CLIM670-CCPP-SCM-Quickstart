@@ -117,7 +117,7 @@ This will take a while. The end of a succssful build will look like
 
 * Files necssary for building the executable have been written to bin/
 * The CCPP physics and framwork prebuild scripts are ran to match required physics variables with those available from the dynamical core (SCM) and to generate physcis caps and makefile segments
-* Software caps are generated for each physics group defined in the supplied Suitee definitiona Files (SDFs) and generate a static library that becomes part of the SCM executable. 
+* Software caps are generated for each physics group defined in the supplied Suite Definition Files (SDFs) and generate a static library that becomes part of the SCM executable. 
 * ccpp_prebuild.err contains a list of all files that have been used in this step
 
 We are now ready to compile. This step will create the executable.
