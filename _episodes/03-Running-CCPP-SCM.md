@@ -256,7 +256,7 @@ The case_config namelist expects the following parameters:
 >Specify the model runtime in seconds (integer). This should correspond with the forcing dataset used. If a runtime is specified that is longer than the >supplied forcing, the forcing is held constant at the last specified values.
 >
 
-* thermo_forcing_typee
+* thermo_forcing_type
 >
 >An integer representing how forcing for temperature and moisture state vari-
 ables is applied (1 = total advective tendencies, 2 = horizontal advective ten- dencies with prescribed vertical motion, 3 = relaxation to observed profiles with vertical motion prescribed)
