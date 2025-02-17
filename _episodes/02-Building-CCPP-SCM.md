@@ -104,7 +104,7 @@ $ cmake ../src
 ~~~
 {: .language-bash}
 
-This will take a while. A end of a succssful build will look like 
+This will take a while. The end of a succssful build will look like 
 
 ~~~
 -- Configuring done
