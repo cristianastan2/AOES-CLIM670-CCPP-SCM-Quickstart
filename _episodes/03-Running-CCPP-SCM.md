@@ -232,7 +232,11 @@ The `output.nc` contains the output written with the frequency set by the `--n_i
 
 > ## What is in this file?
 >
-> We will look at the file using `ncdump -h` to understand what is in the file.
+> We will look at the file using `ncdump -h` to understand what is in the file. In my case `ncdump` is not loaded when I connect to Hopper using the 'Clusters' tab on the Dashboard. It works after loading the following modules:
+> ~~~
+> $ module load OneAPI/2022.1.2 compiler/2022.0.2 netcdf-fortran/4.5.3-kc
+> ~~~
+> {: .language-bash}
 >
 > What variables are in the file?
 > 
